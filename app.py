@@ -55,19 +55,26 @@ def update_event(event_id):
     return redirect(url_for('get_events'))
 
 
-@app.route('/get_status')
-def get_status():
-    return render_template('status.html', status=mongo.db.status.find())
-
-
-@app.route('/edit_status')
-def edit_status():
-    return render_template('updatestatus.html')
-
-
 @app.route('/get_purpose')
 def get_purpose():
     return render_template('purpose.html', purpose=mongo.db.purpose.find())
+
+
+@app.route('/add_purpose')
+def add_purpose():
+    return render_template('addpurpose.html')
+
+
+@app.route('/insert_purpose', methods=['POST'])
+def insert_purpose():
+    purpose = mongo.db.purpose
+    purpose.insert_one(request.form.to_dict())
+    return redirect(url_for('get_purpose'))
+
+
+@app.route('/get_status')
+def get_status():
+    return render_template('status.html', status=mongo.db.status.find())
 
 
 @app.route('/get_users')

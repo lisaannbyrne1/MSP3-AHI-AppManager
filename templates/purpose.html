@@ -1,8 +1,17 @@
-{% extends 'base.html' %}
-{% block content %}
-    {% for purpose in purpose %}
-        {{purpose.purpose}}    
-    {% endfor %}
-
-
+{% extends 'base.html'%} {% block content %}
+<div class="row">
+    <h3>Event Purpose</h3>
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for purpose in purpose %}
+        <li>
+            <div class="collapsible-header">
+                 <div class="purpose_header">
+                    <strong>{{purpose.purpose}}</strong>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+        <a href="{{url_for('add_purpose')}}" class="btn waves-effect waves-light">Add New</a>
+    </ul>
+</div>
 {% endblock %}
