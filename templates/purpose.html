@@ -1,19 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<ul class="collapsible" data-collapsible="accordion">
-    {% for task in tasks %}
-    <li>
-            <div class="collapsible-header">
-
-                <div class=" task_header col s9">
-                </div>
-                <div class="collapsible-body">
-                <span>
-                    {{purpose.purpose}}
-                </span>
-            </div>
-            </div>
-    </li>
+    {% for purpose in purpose %}
+        {{purpose.purpose}}    
     {% endfor %}
-    </ul>
+
+
 {% endblock %}

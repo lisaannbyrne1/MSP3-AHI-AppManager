@@ -1,24 +1,26 @@
-{% extends 'base.html' %}
-{% block content %}
-<ul class="collapsible" data-collapsible="accordion">
-    {% for task in tasks %}
-    <li>
+{% extends 'base.html' %} {% block content %}
+<h3>Events</h3>
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for events in events %}
+        <li>
             <div class="collapsible-header">
-
                 <div class=" task_header col s9">
-                <i class="material-icons">expand_more</i><strong>{{events.time}}</strong> - {{events.date}}
+                      <a href="{{url_for('edit_event', event_id=events._id) }}" class="btn waves-effect waves-light">Edit</a>
+                    <i class="material-icons">expand_more</i><strong>{{events.date}} - {{events.visit_time}}</strong> 
                 </div>
-                <div class="collapsible-body">
+            </div>
+            <div class="collapsible-body">
                 <span>
-                    {{events.client_name}}
-                    {{events.client_ref}}
-                    {{events.location}}
-                    {{events.date}}
-                    {{events.time}}
+                    <p><strong>Name:</strong> {{events.client_name}}</p>
+                    <p><strong>Client Reference:</strong> {{events.client_ref}}</p>
+                    <p><strong>Location:</strong> {{events.location}}</p>
+                    <p><strong>Visit Date:</strong> {{events.date}}</p>
+                    <p><strong>Visit Time:</strong> {{events.visit_time}}</p>
+                    <p><strong>Purpose:</strong> {{events.purpose}}</p>
+                    <p><strong>Status:</strong> {{events.status}}</p>
                 </span>
             </div>
-            </div>
-    </li>
-    {% endfor %}
+        </li>
+        {% endfor %}
     </ul>
 {% endblock %}

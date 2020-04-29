@@ -8,7 +8,7 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'ClientTaskManager'
-app.config["MONGO_URI"] = 'mongodb://secret_key = os.environ.get("MONGO_URI")'
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
 
@@ -16,22 +16,48 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_events')
 def get_events():
-    return render_template('events.html')
+    return render_template('events.html', events=mongo.db.events.find())
 
 
-@app.route('/add_events')
-def add_events():
-    return render_template('addevents.html')
+@app.route('/add_event')
+def add_event():
+    return render_template('addevents.html', purpose=mongo.db.purpose.find(), status=mongo.db.status.find())
 
 
-@app.route('/edit_events')
-def edit_events():
-    return render_template('editevents.html')
+@app.route('/insert_event', methods=['POST'])
+def insert_event():
+    events = mongo.db.events
+    events.insert_one(request.form.to_dict())
+    return redirect(url_for('get_events'))
+
+
+@app.route('/edit_event/<event_id>')
+def edit_event(event_id):
+    the_event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
+    all_purpose = mongo.db.purpose.find()
+    all_status = mongo.db.status.find()
+    return render_template('editevent.html', event=the_event, purpose=all_purpose, status=all_status)
+
+
+@app.route('/update_event/<event_id>', methods=['POST'])
+def update_event(event_id):
+    mongo.db.events.update(
+        {'_id': ObjectId(event_id)},
+    {
+        'client_name': request.form.get('client_name'),
+        'client_ref': request.form.get('client_ref'),
+        'location': request.form.get('location'),
+        'date': request.form.get('date'),
+        'visit_time': request.form.get('visit_time'),
+        'purpose': request.form.get('purpose'),
+        'status': request.form.get('status'),
+    })
+    return redirect(url_for('get_events'))
 
 
 @app.route('/get_status')
 def get_status():
-    return render_template('status.html')
+    return render_template('status.html', status=mongo.db.status.find())
 
 
 @app.route('/edit_status')
@@ -41,12 +67,12 @@ def edit_status():
 
 @app.route('/get_purpose')
 def get_purpose():
-    return render_template('purpose.html')
+    return render_template('purpose.html', purpose=mongo.db.purpose.find())
 
 
 @app.route('/get_users')
 def get_users():
-    return render_template('users.html')
+    return render_template('users.html', users=mongo.db.users.find())
 
 
 if __name__ == '__main__':
