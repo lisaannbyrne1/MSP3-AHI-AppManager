@@ -79,6 +79,18 @@ def get_users():
     return render_template('users.html', users=mongo.db.users.find())
 
 
+@app.route('/add_user')
+def add_user():
+    return render_template('addusers.html')
+
+
+@app.route('/insert_user', methods=['POST'])
+def insert_user():
+    users = mongo.db.users
+    users.insert_one(request.form.to_dict())
+    return redirect(url_for('get_users'))
+
+
 if __name__ == '__main__':
     app.run(host=os.getenv('IP', '0.0.0.0'),
             port=int(os.getenv('PORT', 5000)),
