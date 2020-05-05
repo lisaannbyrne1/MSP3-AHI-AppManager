@@ -47,17 +47,20 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">search</i>
-          <input id="pvp" name="pvp" type="search" class="validate" required/>
-          <label for="icon_prefix">PVP</label>
+          <select id="pvp_name" name="pvp_name" class="material_select" required>
+            <option value="" disabled selected>Select a PVP</option>
+            {% for users in users %}
+            <option value="{{users.pvp_name}}">{{users.pvp_name}} - {{users.reg_no}}</option>
+            {% endfor %}
+          </select>
         </div>
       </div>
-
 
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">list</i>
           <select id="purpose" name="purpose" class="material_select" required>
-            <option value="" disabled selected>Select a visit purpose</option>
+            <option value="" disabled selected>Visit purpose</option>
             {% for purpose in purpose %}
             <option value="{{purpose.purpose}}"
               >{{purpose.purpose}}</option
@@ -71,7 +74,7 @@
         <div class="input-field col s12">
           <i class="material-icons prefix">poll</i>
           <select id="status" name="status" class="material_select" required>
-            <option value="" disabled selected>Select status of event</option>
+            <option value="" disabled selected>Status of event</option>
             {% for status in status %}
             <option value="{{status.status}}" >{{status.status}}</option>
             {% endfor %}

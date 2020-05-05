@@ -21,7 +21,7 @@ def get_events():
 
 @app.route('/add_event')
 def add_event():
-    return render_template('addevents.html', purpose=mongo.db.purpose.find(), status=mongo.db.status.find())
+    return render_template('addevents.html', users=mongo.db.users.find(), purpose=mongo.db.purpose.find(), status=mongo.db.status.find())
 
 
 @app.route('/insert_event', methods=['POST'])
@@ -34,9 +34,10 @@ def insert_event():
 @app.route('/edit_event/<event_id>')
 def edit_event(event_id):
     the_event = mongo.db.events.find_one({"_id": ObjectId(event_id)})
+    all_users = mongo.db.users.find()
     all_purpose = mongo.db.purpose.find()
     all_status = mongo.db.status.find()
-    return render_template('editevent.html', event=the_event, purpose=all_purpose, status=all_status)
+    return render_template('editevent.html', event=the_event, users=all_users, purpose=all_purpose, status=all_status)
 
 
 @app.route('/update_event/<event_id>', methods=['POST'])
@@ -49,6 +50,7 @@ def update_event(event_id):
         'location': request.form.get('location'),
         'date': request.form.get('date'),
         'visit_time': request.form.get('visit_time'),
+        'pvp_name': request.form.get('pvp_name'),
         'purpose': request.form.get('purpose'),
         'status': request.form.get('status'),
     })
