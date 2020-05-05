@@ -1,12 +1,23 @@
-{% extends 'base.html' %}
-{% block content %}
-    {% for users in users %}
-        {{users.name}}
-        {{users.reg_no}}
-        {{users.email}}
-        {{users.company_name}}
-        {{users.descrption}}   
-    {% endfor %}
-
-
+{% extends 'base.html' %} {% block content %}
+<h3>Users</h3>
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for users in users %}
+        <li>
+            <div class="collapsible-header">
+                <div class=" task_header col s9">
+                    <i class="material-icons">expand_more</i><strong>{{users.name}} - {{users.reg_no}}</strong> 
+                </div>
+            </div>
+            <div class="collapsible-body">
+                <span>
+                    <p><strong>Name:</strong> {{users.name}}</p>
+                    <p><strong>Registration No.:</strong> {{users.reg_no}}</p>
+                    <p><strong>Email:</strong> {{users.email}}</p>
+                    <p><strong>Company Name:</strong> {{users.company_name}}</p>
+                </span>
+            </div>
+        </li>
+        {% endfor %}
+        <a href="" class="btn waves-effect waves-light">Add User</a>
+    </ul>
 {% endblock %}

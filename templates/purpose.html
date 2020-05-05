@@ -1,17 +1,20 @@
-{% extends 'base.html'%} {% block content %}
-<div class="row">
-    <h3>Event Purpose</h3>
+{% extends 'base.html' %} {% block content %}
+<h3>Purpose</h3>
     <ul class="collapsible" data-collapsible="accordion">
         {% for purpose in purpose %}
         <li>
             <div class="collapsible-header">
-                 <div class="purpose_header">
-                    <strong>{{purpose.purpose}}</strong>
+                <div class=" task_header col s9">
+                    <i class="material-icons">expand_more</i><strong>{{purpose.purpose}}</strong> 
                 </div>
+            </div>
+            <div class="collapsible-body">
+                <span>
+                    <p><strong>Description:</strong> {{purpose.description}}</p>
+                </span>
             </div>
         </li>
         {% endfor %}
-        <a href="{{url_for('add_purpose')}}" class="btn waves-effect waves-light">Add New</a>
+        <a href="{{url_for('add_purpose')}}" class="btn waves-effect waves-light">Add Purpose</a>
     </ul>
-</div>
 {% endblock %}

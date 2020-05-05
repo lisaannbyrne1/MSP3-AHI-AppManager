@@ -72,11 +72,6 @@ def insert_purpose():
     return redirect(url_for('get_purpose'))
 
 
-@app.route('/get_status')
-def get_status():
-    return render_template('status.html', status=mongo.db.status.find())
-
-
 @app.route('/get_users')
 def get_users():
     return render_template('users.html', users=mongo.db.users.find())
