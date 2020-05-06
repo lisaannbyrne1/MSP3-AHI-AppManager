@@ -14,21 +14,21 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-@app.route('/get_events')
-def get_events():
-    return render_template('events.html', events=mongo.db.events.find())
+@app.route('/all_events')
+def all_events():
+    return render_template('all_events.html', events=mongo.db.events.find())
 
 
 @app.route('/add_event')
 def add_event():
-    return render_template('addevents.html', users=mongo.db.users.find(), purpose=mongo.db.purpose.find(), status=mongo.db.status.find())
+    return render_template('add_events.html', users=mongo.db.users.find(), purpose=mongo.db.purpose.find(), status=mongo.db.status.find())
 
 
 @app.route('/insert_event', methods=['POST'])
 def insert_event():
     events = mongo.db.events
     events.insert_one(request.form.to_dict())
-    return redirect(url_for('get_events'))
+    return redirect(url_for('all_events'))
 
 
 @app.route('/edit_event/<event_id>')
@@ -37,7 +37,7 @@ def edit_event(event_id):
     all_users = mongo.db.users.find()
     all_purpose = mongo.db.purpose.find()
     all_status = mongo.db.status.find()
-    return render_template('editevent.html', event=the_event, users=all_users, purpose=all_purpose, status=all_status)
+    return render_template('edit_event.html', event=the_event, users=all_users, purpose=all_purpose, status=all_status)
 
 
 @app.route('/update_event/<event_id>', methods=['POST'])
@@ -54,17 +54,17 @@ def update_event(event_id):
         'purpose': request.form.get('purpose'),
         'status': request.form.get('status'),
     })
-    return redirect(url_for('get_events'))
+    return redirect(url_for('all_events'))
 
 
-@app.route('/get_purpose')
-def get_purpose():
+@app.route('/purpose')
+def purpose():
     return render_template('purpose.html', purpose=mongo.db.purpose.find())
 
 
 @app.route('/add_purpose')
 def add_purpose():
-    return render_template('addpurpose.html')
+    return render_template('add_purpose.html')
 
 
 @app.route('/insert_purpose', methods=['POST'])
@@ -74,21 +74,21 @@ def insert_purpose():
     return redirect(url_for('get_purpose'))
 
 
-@app.route('/get_users')
-def get_users():
+@app.route('/users')
+def users():
     return render_template('users.html', users=mongo.db.users.find())
 
 
 @app.route('/add_user')
 def add_user():
-    return render_template('addusers.html')
+    return render_template('add_user.html')
 
 
 @app.route('/insert_user', methods=['POST'])
 def insert_user():
     users = mongo.db.users
     users.insert_one(request.form.to_dict())
-    return redirect(url_for('get_users'))
+    return redirect(url_for('users'))
 
 
 if __name__ == '__main__':

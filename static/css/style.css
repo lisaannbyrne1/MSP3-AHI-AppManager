@@ -1,3 +1,11 @@
-.nav-wrapper {
-background-color: green;
+/*--Navigation--*/
+nav .brand-logo {
+    margin-left: 15px;
 }
+
+.nav-wrapper {
+    background-color: #26a69a;
+}
+
+
+/*--Footer--*/

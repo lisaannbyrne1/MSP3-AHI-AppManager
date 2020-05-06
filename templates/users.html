@@ -1,11 +1,12 @@
 {% extends 'base.html' %} {% block content %}
-<h3>Users</h3>
+<h3>PVP Accounts</h3>
     <ul class="collapsible" data-collapsible="accordion">
         {% for users in users %}
         <li>
             <div class="collapsible-header">
-                <div class=" task_header col s9">
+                <div class="col s9">
                     <i class="material-icons">expand_more</i><strong>{{users.pvp_name}} - {{users.reg_no}}</strong> 
+                   <a href="{{url_for('add_user')}}" class="btn waves-effect waves-light">Add User</a>
                 </div>
             </div>
             <div class="collapsible-body">
@@ -18,6 +19,6 @@
             </div>
         </li>
         {% endfor %}
-        <a href="{{url_for('add_user')}}" class="btn waves-effect waves-light">Add User</a>
+        
     </ul>
 {% endblock %}

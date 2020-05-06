@@ -1,16 +1,13 @@
-{% extends 'base.html'%} {% block content %}
-
-<h3>Edit Task</h3>
+{% extends 'base.html' %} {% block content %}
+<h3>Add Appointment</h3>
 <div class="row">
-    <form action="{{ url_for('update_event', event_id=event._id) }}" method="POST"  class="col s12">
-        <div class="row">
-            <div class="row">
-                <div class="input-field col s12">
+  <form action="{{url_for('insert_event')}}" method="POST" class="col s12">
+    <div class="row">
 
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
-          <input id="client_name" name="client_name" type="text" required class="validate" readonly value="{{event.client_name}}">
+          <input id="client_name" name="client_name" type="text" required class="validate" />
           <label for="icon_prefix">Client Name</label>
         </div>
       </div>
@@ -18,7 +15,7 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">code</i>
-          <input id="client_ref" name="client_ref" type="text" class="validate" required maxlength="7" readonly value="{{event.client_ref}}">
+          <input id="client_ref" name="client_ref" type="text" class="validate" required maxlength="7" />
           <label for="icon_code">Client Ref</label>
         </div>
       </div>
@@ -26,7 +23,7 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">location_on</i>
-          <input id="location" name="location" type="text" class="validate" required readonly value="{{event.location}}">
+          <input id="location" name="location" type="text" class="validate" required/>
           <label for="icon_location_on">Location</label>
         </div>
       </div>
@@ -34,7 +31,7 @@
       <div class="row" id="matfix">
         <div class="input-field col s12">
           <i class="material-icons prefix">today</i>
-          <input id="date" name="date" type="text" class="datepicker" required value="{{event.date}}">
+          <input id="date" name="date" type="text" class="datepicker" required/>
           <label for="icon_prefix">Date</label>
         </div>
       </div>
@@ -42,7 +39,7 @@
        <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">access_time</i>
-          <input id="visit_time" name="visit_time" type="time" class="validate" required value="{{event.visit_time}}">
+          <input id="visit_time" name="visit_time" type="time" class="validate" required/>
           <label for="icon_prefix"></label>
         </div>
       </div>
@@ -53,11 +50,7 @@
           <select id="pvp_name" name="pvp_name" class="material_select" required>
             <option value="" disabled selected>Select a PVP</option>
             {% for users in users %}
-                {% if users.pvp_name == event.pvp_name %}
-                <option value="{{users.pvp_name}}" selected > {{users.pvp_name}} - {{users.reg_no}}</option>
-                {% else %}
-                <option value="{{users.pvp_name}}">{{users.pvp_name}} - {{users.reg_no}}</option>
-                {% endif %}
+            <option value="{{users.pvp_name}}">{{users.pvp_name}} - {{users.reg_no}}</option>
             {% endfor %}
           </select>
         </div>
@@ -69,31 +62,25 @@
           <select id="purpose" name="purpose" class="material_select" required>
             <option value="" disabled selected>Visit purpose</option>
             {% for purpose in purpose %}
-                {% if purpose.purpose == event.purpose %}
-                <option value="{{purpose.purpose}}" selected > {{purpose.purpose}}</option>
-                {% else %}
-                <option value="{{purpose.purpose}}">{{purpose.purpose}}</option>
-                {% endif %}
+            <option value="{{purpose.purpose}}"
+              >{{purpose.purpose}}</option
+            >
             {% endfor %}
           </select>
         </div>
       </div>
 
-         <div class="row">
+      <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">poll</i>
           <select id="status" name="status" class="material_select" required>
             <option value="" disabled selected>Status of event</option>
             {% for status in status %}
-                {% if status.status == event.status %}
-                <option value="{{status.status}}" selected > {{status.status}}</option>
-                {% else %}
-                <option value="{{status.status}}">{{status.status}}</option>
-                {% endif %}
+            <option value="{{status.status}}" >{{status.status}}</option>
             {% endfor %}
           </select>
         </div>
-      </div>   
+      </div>
 
       <div class="row">
         <div class="input-field col s12">
@@ -102,7 +89,8 @@
         </button>
          </div>
     </div>
-</div>
-    </form>
+
+    </div>
+  </form>
 </div>
 {% endblock %}
