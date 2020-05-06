@@ -18,10 +18,8 @@
 <nav>
 <ul id="dropdown1" class="dropdown-content">
     <li><a href="{{url_for('users')}}">PVP Accounts</a></li>
-    <li><a href="{{url_for('add_user')}}">Add PVP Account</a></li>
     <li class="divider"></li>
-    <li><a href="">Client Accounts</a></li>
-    <li><a href="">Add Client Account</a></li>
+    <li><a href="{{url_for('clients')}}">Client Accounts</a></li>
 </ul>
 
   <div class="nav-wrapper">
@@ -32,10 +30,8 @@
 
     <ul id="dropdown2" class="dropdown-content">
         <li><a href="{{url_for('all_events')}}">All Appointments</a></li>
-        <li><a href="{{url_for('add_event')}}">Add Appointments</a></li>
         <li class="divider"></li>
         <li><a href="{{url_for('purpose')}}">Appointments Purpose</a></li>
-        <li><a href="{{url_for('add_purpose')}}">Add Purpose</a></li>
     </ul>
 
 <!-- Dropdown Navigation Trigger -->

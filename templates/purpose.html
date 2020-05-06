@@ -15,6 +15,11 @@
             </div>
         </li>
         {% endfor %}
-        <a href="{{url_for('add_purpose')}}" class="btn waves-effect waves-light">Add Purpose</a>
-    </ul>
+       </ul>
+
+<!--create purpose link-->  
+
+<div>  
+<a href="{{url_for('add_purpose')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons">add</i></a>
+</div> 
 {% endblock %}

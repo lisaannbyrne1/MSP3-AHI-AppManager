@@ -9,3 +9,26 @@ nav .brand-logo {
 
 
 /*--Footer--*/
+
+/*--According icons--*/
+.collapsible-header {
+    position: relative;
+}
+
+#edit_icon {
+    position: absolute;
+    right: 50px;
+}
+
+#delete_icon {
+    position: absolute;
+    right: 0;
+}
+
+a {
+    color: #26a69a;
+}
+
+#add_icon {
+    color: #26a69a;
+}

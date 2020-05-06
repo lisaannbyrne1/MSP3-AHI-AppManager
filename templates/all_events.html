@@ -5,12 +5,18 @@
         {% for events in events %}
         <li>
             <div class="collapsible-header ">
-                <div class="col s9">
-                <a href="{{url_for('edit_event', event_id=events._id)}}" class="btn waves-effect waves-light">Edit</a>
-                <i class="material-icons">expand_more</i><strong>{{events.pvp_name}} - {{events.date}} - {{events.visit_time}}</strong>   
+                <div class="col s6">
+
+                <a href="{{url_for('edit_event', event_id=events._id)}}"> <i class="material-icons right" id="edit_icon">edit</i></a>
+
+                <a href="{{url_for('delete_event', event_id=events._id)}}"> <i class="material-icons right" id="delete_icon">delete</i></a>
+
+                <i class="material-icons roate left" id="expand_icon">expand_more</i><strong>{{events.pvp_name}} - {{events.date}} - {{events.visit_time}}</strong>
+
             </div>
   </div>
             <div class="collapsible-body">
+          
                 <span>
                     <p><strong>Name:</strong> {{events.client_name}}</p>
                     <p><strong>Client Reference:</strong> {{events.client_ref}}</p>
@@ -24,9 +30,11 @@
             </div>
          
         </li>
-        
+  
         {% endfor %}
     </ul>
-     
+   <div>  
+<a href="{{url_for('add_event')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons">add</i></a>
+</div> 
 {% endblock %}
  

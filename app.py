@@ -58,6 +58,12 @@ def update_event(event_id):
     return redirect(url_for('all_events'))
 
 
+@app.route('/delete_event/<event_id>')
+def delete_event(event_id):
+    mongo.db.events.remove({'_id': ObjectId(event_id)})
+    return redirect(url_for('all_events'))
+
+
 """Appointment Purposes"""
 @app.route('/purpose')
 def purpose():
@@ -109,6 +115,31 @@ def add_client():
 def insert_client():
     clients = mongo.db.clients
     clients.insert_one(request.form.to_dict())
+    return redirect(url_for('clients'))
+
+
+@app.route('/delete_client/<client_id>')
+def delete_client(client_id):
+    mongo.db.clients.remove({'_id': ObjectId(client_id)})
+    return redirect(url_for('clients'))
+
+
+@app.route('/edit_client/<client_id>')
+def edit_client(client_id):
+    the_client = mongo.db.clients.find_one({"_id": ObjectId(client_id)})
+    return render_template('edit_client.html', client=the_client)
+
+
+@app.route('/update_client/<client_id>', methods=['POST'])
+def update_client(client_id):
+    mongo.db.clients.update(
+        {'_id': ObjectId(client_id)},
+    {
+        'client_name': request.form.get('client_name'),
+        'client_ref': request.form.get('client_ref'),
+        'address': request.form.get('address'),
+        'email': request.form.get('email'),
+    })
     return redirect(url_for('clients'))
 
 

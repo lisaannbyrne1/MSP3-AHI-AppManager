@@ -4,9 +4,15 @@
         {% for users in users %}
         <li>
             <div class="collapsible-header">
-                <div class="col s9">
-                    <i class="material-icons">expand_more</i><strong>{{users.pvp_name}} - {{users.reg_no}}</strong> 
-                   <a href="{{url_for('add_user')}}" class="btn waves-effect waves-light">Add User</a>
+                <div class="col s6">
+
+                <a href=""> <i class="material-icons right" id="edit_icon">edit</i></a>
+
+                <a href=""> <i class="material-icons right" id="delete_icon">delete</i></a>
+
+                <i class="material-icons roate left" id="expand_icon">expand_more</i><strong>{{users.pvp_name}} - {{users.reg_no}}</strong>    
+
+
                 </div>
             </div>
             <div class="collapsible-body">
@@ -21,4 +27,8 @@
         {% endfor %}
         
     </ul>
+    <div>
+    <a href="{{url_for('add_user')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons"> add</i></a>
+</div>
 {% endblock %}
+
