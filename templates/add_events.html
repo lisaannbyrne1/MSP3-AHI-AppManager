@@ -6,25 +6,16 @@
 
       <div class="row">
         <div class="input-field col s12">
+
           <i class="material-icons prefix">account_circle</i>
-          <input id="client_name" name="client_name" type="text" required class="validate" />
-          <label for="icon_prefix">Client Name</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">code</i>
-          <input id="client_ref" name="client_ref" type="text" class="validate" required maxlength="7" />
-          <label for="icon_code">Client Ref</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">location_on</i>
-          <input id="location" name="location" type="text" class="validate" required/>
-          <label for="icon_location_on">Location</label>
+          <select id="client_name" name="client_name" class="material_select" required>
+            <option value="" disabled selected>Client Name</option>
+            {% for clients in clients %}
+            <option value="{{clients.client_name}}"
+              >{{clients.client_name}} - {{clients.client_ref}}</option
+            >
+            {% endfor %}
+          </select>
         </div>
       </div>
 
