@@ -100,6 +100,31 @@ def insert_user():
     return redirect(url_for('users'))
 
 
+@app.route('/delete_user/<user_id>')
+def delete_user(user_id):
+    mongo.db.users.remove({'_id': ObjectId(user_id)})
+    return redirect(url_for('users'))
+
+
+@app.route('/edit_user/<user_id>')
+def edit_user(user_id):
+    the_user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    return render_template('edit_user.html', user=the_user)
+
+
+@app.route('/update_user/<user_id>', methods=['POST'])
+def update_user(user_id):
+    mongo.db.users.update(
+        {'_id': ObjectId(user_id)},
+    {
+        'pvp_name': request.form.get('pvp_name'),
+        'reg_no': request.form.get('reg_no'),
+        'email': request.form.get('email'),
+        'company_name': request.form.get('company_name'),
+    })
+    return redirect(url_for('users'))
+
+
 """Clients"""
 @app.route('/clients')
 def clients():

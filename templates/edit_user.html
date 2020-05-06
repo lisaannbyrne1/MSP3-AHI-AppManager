@@ -1,0 +1,53 @@
+{% extends 'base.html'%} {% block content %}
+
+<h3>Edit Vet</h3>
+<div class="row">
+    <form action="{{url_for('update_user', user_id=user._id)}}" method="POST"  class="col s12">
+        <div class="row">
+            <div class="row">
+                <div class="input-field col s12">
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="pvp_name" name="pvp_name" type="text" required class="validate" value="{{user.pvp_name}}">
+          <label for="icon_prefix">Vet Name</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">code</i>
+          <input id="reg_no" name="reg_no" type="text" class="validate" required maxlength="7" value="{{user.reg_no}}">
+          <label for="icon_code">Vet Registration</label>
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          <input id="email" name="email" type="text" class="validate" required value="{{user.email}}">
+          <label for="icon_location_on">Email</label>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">location_on</i>
+          <input id="company_name" name="company_name" type="text" class="validate" required value="{{user.company_name}}">
+          <label for="icon_location_on">Company Name</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+         <button class="btn waves-effect waves-light" type="submit" required>Submit
+        <i class="material-icons right">send</i>
+        </button>
+         </div>
+    </div>
+</div>
+
+    </form>
+</div>
+{% endblock %}
