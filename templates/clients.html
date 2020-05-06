@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<h3>Client Accounts</h3>
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for clients in clients %}
+        <li>
+            <div class="collapsible-header">
+                <div class="col s9">
+                    <i class="material-icons">expand_more</i><strong>{{clients.client_name}} - {{clients.client_ref}}</strong> 
+                   <a href="{{url_for('add_user')}}" class="btn waves-effect waves-light">Add Client</a>
+                </div>
+            </div>
+            <div class="collapsible-body">
+                <span>
+                    <p><strong>Name:</strong> {{clients.client_name}}</p>
+                    <p><strong>Reference No.:</strong> {{clients.client_ref}}</p>
+                    <p><strong>Address:</strong> {{clients.address}}</p>
+                    <p><strong>Email:</strong> {{clients.email}}</p>
+                </span>
+            </div>
+        </li>
+        {% endfor %}
+        
+    </ul>
+{% endblock %}

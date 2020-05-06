@@ -13,6 +13,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 
 
+"""Appointments"""
 @app.route('/')
 @app.route('/all_events')
 def all_events():
@@ -57,6 +58,7 @@ def update_event(event_id):
     return redirect(url_for('all_events'))
 
 
+"""Appointment Purposes"""
 @app.route('/purpose')
 def purpose():
     return render_template('purpose.html', purpose=mongo.db.purpose.find())
@@ -74,6 +76,7 @@ def insert_purpose():
     return redirect(url_for('get_purpose'))
 
 
+"""Vet users"""
 @app.route('/users')
 def users():
     return render_template('users.html', users=mongo.db.users.find())
@@ -89,6 +92,24 @@ def insert_user():
     users = mongo.db.users
     users.insert_one(request.form.to_dict())
     return redirect(url_for('users'))
+
+
+"""Clients"""
+@app.route('/clients')
+def clients():
+    return render_template('clients.html', clients=mongo.db.clients.find())
+
+
+@app.route('/add_client')
+def add_client():
+    return render_template('add_client.html')
+
+
+@app.route('/insert_client', methods=['POST'])
+def insert_client():
+    clients = mongo.db.clients
+    clients.insert_one(request.form.to_dict())
+    return redirect(url_for('clients'))
 
 
 if __name__ == '__main__':

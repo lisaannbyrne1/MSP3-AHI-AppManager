@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block content %}
+<h3>Create new client account</h3>
+<div class="row">
+  <form action="{{url_for('insert_client')}}" method="POST" class="col s12">
+    <div class="row">
+      <div class="row">
+
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="client_name" name="client_name" type="text" required class="validate" />
+          <label for="icon_prefix">Client Name</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">code</i>
+          <input id="client_ref" name="client_ref" type="text" required maxlength="7" class="validate" />
+          <label for="icon_prefix">Client reference number</label>
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">location_on</i>
+          <input id="address" name="address" type="text" required class="validate" />
+          <label for="icon_prefix">Address</label>
+        </div>
+      </div>
+
+        <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          <input id="email" name="email" type="email" required class="validate" />
+          <label for="icon_prefix">Email</label>
+        </div>
+      </div>
+ 
+      <div class="row">
+        <div class="input-field col s12">
+         <button class="btn waves-effect waves-light" type="submit" required>Submit
+        <i class="material-icons right">send</i>
+        </button>
+         </div>
+    </div>
+       </div>
+  </form>
+</div>
+{% endblock %}
