@@ -64,7 +64,7 @@ def delete_event(event_id):
     return redirect(url_for('all_events'))
 
 
-"""Appointment Purposes"""
+"""Purposes"""
 @app.route('/purpose')
 def purpose():
     return render_template('purpose.html', purpose=mongo.db.purpose.find())
@@ -80,6 +80,29 @@ def insert_purpose():
     purpose = mongo.db.purpose
     purpose.insert_one(request.form.to_dict())
     return redirect(url_for('get_purpose'))
+
+
+@app.route('/delete_purpose/<purpose_id>')
+def delete_purpose(purpose_id):
+    mongo.db.purpose.remove({'_id': ObjectId(purpose_id)})
+    return redirect(url_for('purpose'))
+
+
+@app.route('/edit_purpose/<purpose_id>')
+def edit_purpose(purpose_id):
+    the_purpose = mongo.db.purpose.find_one({"_id": ObjectId(purpose_id)})
+    return render_template('edit_purpose.html', purpose=the_purpose)
+
+
+@app.route('/update_purpose/<purpose_id>', methods=['POST'])
+def update_purpose(purpose_id):
+    mongo.db.purpose.update(
+        {'_id': ObjectId(purpose_id)},
+    {
+        'purpose': request.form.get('purpose'),
+        'description': request.form.get('description'),
+    })
+    return redirect(url_for('purpose'))
 
 
 """Vet users"""
