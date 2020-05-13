@@ -39,7 +39,7 @@
         <div class="input-field col s12">
           <i class="material-icons prefix">search</i>
           <select id="pvp_name" name="pvp_name" class="material_select" required>
-            <option value="" disabled selected>Select a PVP</option>
+            <option value="" disabled selected>Select a Vet</option>
             {% for users in users %}
             <option value="{{users.pvp_name}}">{{users.pvp_name}} - {{users.reg_no}}</option>
             {% endfor %}

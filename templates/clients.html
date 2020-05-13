@@ -15,12 +15,10 @@
                 </div>
             </div>
             <div class="collapsible-body">
-                <span>
-                    <p><strong>Name:</strong> {{clients.client_name}}</p>
-                    <p><strong>Reference No.:</strong> {{clients.client_ref}}</p>
-                    <p><strong>Address:</strong> {{clients.address}}</p>
-                    <p><strong>Email:</strong> {{clients.email}}</p>
-                </span>
+                    <span class="title"><strong>Name:</strong></span> {{clients.client_name}}
+                    <p><span class="title"><strong>Reference No.:</strong></span> {{clients.client_ref}}</p>
+                    <p><span class="title"><strong>Address:</strong></span> {{clients.address}}</p>
+                    <p><span class="title"><strong>Email:</strong></span> {{clients.email}}</p>
             </div>
         </li>
         {% endfor %}

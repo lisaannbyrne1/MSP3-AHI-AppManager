@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<h3>PVP Accounts</h3>
+<h3>Vet Accounts</h3>
     <ul class="collapsible" data-collapsible="accordion">
         {% for users in users %}
         <li>
@@ -16,12 +16,10 @@
                 </div>
             </div>
             <div class="collapsible-body">
-                <span>
-                    <p><strong>Name:</strong> {{users.pvp_name}}</p>
-                    <p><strong>Registration No.:</strong> {{users.reg_no}}</p>
-                    <p><strong>Email:</strong> {{users.email}}</p>
-                    <p><strong>Company Name:</strong> {{users.company_name}}</p>
-                </span>
+                    <span class="title"><strong>Name:</strong></span> {{users.pvp_name}}</p>
+                    <p><span class="title"><strong>Registration No.:</strong></span> {{users.reg_no}}</p>
+                    <p><span class="title"><strong>Email:</strong></span> {{users.email}}</p>
+                    <p><span class="title"><strong>Company Name:</strong></span> {{users.company_name}}</p>
             </div>
         </li>
         {% endfor %}

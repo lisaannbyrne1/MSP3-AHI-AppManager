@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/all_events')
 def all_events():
-    return render_template('all_events.html', events=mongo.db.events.find())
+    return render_template('all_events.html', events=mongo.db.events.find().sort("visit_time"))
 
 
 @app.route('/add_event')
