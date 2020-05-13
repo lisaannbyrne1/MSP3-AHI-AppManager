@@ -4,6 +4,7 @@ if os.path.exists("env.py"):
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from datetime import datetime
 
 
 app = Flask(__name__)
@@ -12,12 +13,11 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
 
-
 """Appointments"""
 @app.route('/')
 @app.route('/all_events')
 def all_events():
-    return render_template('all_events.html', events=mongo.db.events.find().sort("visit_time"))
+    return render_template('all_events.html', events=mongo.db.events.find().sort("date"))
 
 
 @app.route('/add_event')
@@ -68,7 +68,7 @@ def delete_event(event_id):
 """Purposes"""
 @app.route('/purpose')
 def purpose():
-    return render_template('purpose.html', purpose=mongo.db.purpose.find())
+    return render_template('purpose.html', purpose=mongo.db.purpose.find().sort("purpose"))
 
 
 @app.route('/add_purpose')
@@ -109,7 +109,7 @@ def update_purpose(purpose_id):
 """Vet users"""
 @app.route('/users')
 def users():
-    return render_template('users.html', users=mongo.db.users.find())
+    return render_template('users.html', users=mongo.db.users.find().sort("pvp_name"))
 
 
 @app.route('/add_user')
@@ -152,7 +152,7 @@ def update_user(user_id):
 """Clients"""
 @app.route('/clients')
 def clients():
-    return render_template('clients.html', clients=mongo.db.clients.find())
+    return render_template('clients.html', clients=mongo.db.clients.find().sort("client_name"))
 
 
 @app.route('/add_client')
