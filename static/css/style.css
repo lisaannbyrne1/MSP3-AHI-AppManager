@@ -10,6 +10,16 @@ nav .brand-logo {
 
 /*--Footer--*/
 
+.footer {
+   background-color: #26a69a;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
+   color: white;
+}
+
 /*--According icons--*/
 .collapsible-header {
     position: relative;
