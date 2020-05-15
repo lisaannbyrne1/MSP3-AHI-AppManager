@@ -23,7 +23,7 @@ This app will be aimed at veterinary practices, primary at administrative staff 
 This is a multipage app which includes a navigation with dropdown menus and simple page footer.  Each subsequent page is accessible through the app home page and allows users to create, update and deleted records as it is linked to MongoDB database. 
 
 #### Skeleton
-Desktop and mobile wireframes have been created <a href="https://github.com/lisaannbyrne1/MSP3-AHI-TaskManager/static/wireframe/Wireframe.pdf" target="_blank">click here</a>
+Desktop and mobile wireframes have been created <a href="https://github.com/lisaannbyrne1/MSP3-AHI-TaskManager/blob/master/static/wireframe/Wireframe.pdf" target="_blank">click here</a>
 
 #### Surface
 The background of the page is white with the navigation and footer sections in green to provide definition. The font for the navigation and footer is white which stands out against the green background.  Each of the buttons are also coloured in green to stand out on the white background and provide synchronicity.  The font in the body of the app is black for clear and easy reading. 
