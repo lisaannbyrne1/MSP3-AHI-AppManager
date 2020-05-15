@@ -19,6 +19,14 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">location_on</i>
+          <input id="location" name="location" type="text" class="validate" required/>
+          <label for="icon_location_on">Farm Location</label>
+        </div>
+      </div>
+
       <div class="row" id="matfix">
         <div class="input-field col s12">
           <i class="material-icons prefix">today</i>
@@ -61,9 +69,21 @@
         </div>
       </div>
 
+     <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">poll</i>
+          <select id="status" name="status" class="material_select" required>
+            <option value="" disabled selected>Status of event</option>
+            <option value="open" >Open</option>
+          
+          </select>
+        </div>
+      </div>
+
+
       <div class="row">
         <div class="input-field col s12">
-         <button class="btn waves-effect waves-light" type="submit" required>Submit
+         <button class="btn waves-effect waves-light" type="submit" id="submit_icon" required>Submit
         <i class="material-icons right">send</i>
         </button>
          </div>

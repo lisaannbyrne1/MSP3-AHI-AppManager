@@ -46,6 +46,10 @@ a {
     right: 40px;
 }
 
+#submit_icon {
+    z-index: 0;
+}
+
 
 /*--According details--*/
 
@@ -57,6 +61,11 @@ a {
 color: #26a69a;
 }
 
+#label {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 
 /*--Media Queries--*/
 @media only screen and (max-width: 667px) {
@@ -64,7 +73,7 @@ color: #26a69a;
   column-count: 1;
 }
 nav .brand-logo {
-    font-size: 20px;
+    font-size: 19px;
     left: 40%
 }
 
@@ -79,4 +88,34 @@ h3 {
     text-overflow: ellipsis;
 }
 
+.footer {
+   color: #26a69a;
+
+}
+}
+
+@media only screen and (max-width: 568px) {
+nav .brand-logo {
+    font-size: 15px;
+    left: 40%
+
+}
+.footer {
+   color: #26a69a;
+
+}
+
+h3 {
+  font-size: 15px;  
+}
+
+#all_events {
+  column-count: 1;
+}
+}
+
+@media only screen and (max-width: 1024px) {
+#all_events {
+  column-count: 1;
+}
 }
