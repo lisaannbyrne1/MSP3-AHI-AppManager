@@ -1,34 +1,25 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Vet Accounts</h3>
-    <ul class="collapsible" data-collapsible="accordion">
-        {% for users in users %}
-        <li>
-            <div class="collapsible-header">
-                <div class="col s6">
-
-                <a href="{{url_for('edit_user', user_id=users._id)}}"> <i class="material-icons right" id="edit_icon">edit</i></a>
-
-                <a href="{{url_for('delete_user', user_id=users._id)}}"> <i class="material-icons right" id="delete_icon">delete</i></a>
-
-                <div id="label"><i class="material-icons roate left" id="expand_icon">expand_more</i><strong>{{users.pvp_name}} - {{users.reg_no}}</strong></div>    
-
-
-                </div>
-            </div>
-            <div class="collapsible-body">
-                    <span class="title"><strong>Name:</strong></span> {{users.pvp_name}}</p>
-                    <p><span class="title"><strong>Registration No.:</strong></span> {{users.reg_no}}</p>
-                    <p><span class="title"><strong>Email:</strong></span> {{users.email}}</p>
-                    <p><span class="title"><strong>Company Name:</strong></span> {{users.company_name}}</p>
-            </div>
-        </li>
-        {% endfor %}
-        
-    </ul>
-    
-    <!--create user-->  
-    <div class="add_new">
-    <a href="{{url_for('add_user')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons"> add</i></a>
+<ul class="collapsible" data-collapsible="accordion">
+   {% for users in users %}
+   <li>
+      <div class="collapsible-header">
+         <div class="col s6">
+            <a href="{{url_for('edit_user', user_id=users._id)}}"> <i class="material-icons right" id="edit_icon">edit</i></a>
+            <a href="{{url_for('delete_user', user_id=users._id)}}"> <i class="material-icons right" id="delete_icon">delete</i></a>
+            <div id="label"><i class="material-icons roate left" id="expand_icon">expand_more</i><strong>{{users.pvp_name}} - {{users.reg_no}}</strong></div>
+         </div>
+      </div>
+      <div class="collapsible-body">
+         <span class="title"><strong>Name:</strong></span> {{users.pvp_name}}</p>
+         <p><span class="title"><strong>Registration No.:</strong></span> {{users.reg_no}}</p>
+         <p><span class="title"><strong>Email:</strong></span> {{users.email}}</p>
+      </div>
+   </li>
+   {% endfor %}
+</ul>
+<!--create user-->  
+<div class="add_new">
+   <a href="{{url_for('add_user')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons"> add</i></a>
 </div>
 {% endblock %}
-

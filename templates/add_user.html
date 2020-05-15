@@ -1,49 +1,37 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Create new vet account</h3>
 <div class="row">
-  <form action="{{url_for('insert_user')}}" method="POST" class="col s12">
-    <div class="row">
+   <form action="{{url_for('insert_user')}}" method="POST" class="col s12">
       <div class="row">
-
-        <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="pvp_name" name="pvp_name" type="text" required class="validate" />
-          <label for="icon_prefix">Vet Name</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">code</i>
-          <input id="reg_no" name="reg_no" type="text" required class="validate" />
-          <label for="icon_prefix">Vet registration number</label>
-        </div>
-      </div>
-
-        <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">email</i>
-          <input id="email" name="email" type="email" required class="validate" />
-          <label for="icon_prefix">Email</label>
-        </div>
-      </div>
-
-        <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">location_on</i>
-          <input id="company_name" name="company_name" type="text" required class="validate" />
-          <label for="icon_prefix">Company Name</label>
-        </div>
-      </div> 
-
-      <div class="row">
-        <div class="input-field col s12">
-         <button class="btn waves-effect waves-light" type="submit" required>Submit
-        <i class="material-icons right">send</i>
-        </button>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">account_circle</i>
+               <input id="pvp_name" name="pvp_name" type="text" required class="validate" />
+               <label for="icon_prefix">Vet Name</label>
+            </div>
          </div>
-    </div>
-       </div>
-  </form>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">code</i>
+               <input id="reg_no" name="reg_no" type="text" required class="validate" />
+               <label for="icon_prefix">Vet registration number</label>
+            </div>
+         </div>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">email</i>
+               <input id="email" name="email" type="email" required class="validate" />
+               <label for="icon_prefix">Email</label>
+            </div>
+         </div>
+         <div class="row">
+            <div class="input-field col s12">
+               <button class="btn waves-effect waves-light" type="submit" required>Submit
+               <i class="material-icons right">send</i>
+               </button>
+            </div>
+         </div>
+      </div>
+   </form>
 </div>
 {% endblock %}

@@ -1,95 +1,83 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Add Appointment</h3>
 <div class="row">
-  <form action="{{url_for('insert_event')}}" method="POST" class="col s12">
-    <div class="row">
-
+   <form action="{{url_for('insert_event')}}" method="POST" class="col s12">
       <div class="row">
-        <div class="input-field col s12">
-
-          <i class="material-icons prefix">account_circle</i>
-          <select id="client_name" name="client_name" class="material_select" required>
-            <option value="" disabled selected>Client Name</option>
-            {% for clients in clients %}
-            <option value="{{clients.client_name}}"
-              >{{clients.client_name}} - {{clients.client_ref}}</option
-            >
-            {% endfor %}
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">location_on</i>
-          <input id="location" name="location" type="text" class="validate" required/>
-          <label for="icon_location_on">Farm Location</label>
-        </div>
-      </div>
-
-      <div class="row" id="matfix">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">today</i>
-          <input id="date" name="date" type="text" class="datepicker" required/>
-          <label for="icon_prefix">Date</label>
-        </div>
-      </div>
-
-       <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">access_time</i>
-          <input id="visit_time" name="visit_time" type="time" class="validate" required/>
-          <label for="icon_prefix"></label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">search</i>
-          <select id="pvp_name" name="pvp_name" class="material_select" required>
-            <option value="" disabled selected>Select a Vet</option>
-            {% for users in users %}
-            <option value="{{users.pvp_name}}">{{users.pvp_name}} - {{users.reg_no}}</option>
-            {% endfor %}
-          </select>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">list</i>
-          <select id="purpose" name="purpose" class="material_select" required>
-            <option value="" disabled selected>Visit purpose</option>
-            {% for purpose in purpose %}
-            <option value="{{purpose.purpose}}"
-              >{{purpose.purpose}}</option
-            >
-            {% endfor %}
-          </select>
-        </div>
-      </div>
-
-     <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">poll</i>
-          <select id="status" name="status" class="material_select" required>
-            <option value="" disabled selected>Status of event</option>
-            <option value="open" >Open</option>
-          
-          </select>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="input-field col s12">
-         <button class="btn waves-effect waves-light" type="submit" id="submit_icon" required>Submit
-        <i class="material-icons right">send</i>
-        </button>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">account_circle</i>
+               <select id="client_name" name="client_name" class="material_select" required>
+                  <option value="" disabled selected>Client Name</option>
+                  {% for clients in clients %}
+                  <option value="{{clients.client_name}}"
+                     >{{clients.client_name}} - {{clients.client_ref}}</option
+                     >
+                  {% endfor %}
+               </select>
+            </div>
          </div>
-    </div>
-
-    </div>
-  </form>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">location_on</i>
+               <input id="location" name="location" type="text" class="validate" required/>
+               <label for="icon_location_on">Farm Location</label>
+            </div>
+         </div>
+         <div class="row" id="matfix">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">today</i>
+               <input id="date" name="date" type="text" class="datepicker" required/>
+               <label for="icon_prefix">Date</label>
+            </div>
+         </div>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">access_time</i>
+               <input id="visit_time" name="visit_time" type="time" class="validate" required/>
+               <label for="icon_prefix"></label>
+            </div>
+         </div>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">search</i>
+               <select id="pvp_name" name="pvp_name" class="material_select" required>
+                  <option value="" disabled selected>Select a Vet</option>
+                  {% for users in users %}
+                  <option value="{{users.pvp_name}}">{{users.pvp_name}} - {{users.reg_no}}</option>
+                  {% endfor %}
+               </select>
+            </div>
+         </div>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">list</i>
+               <select id="purpose" name="purpose" class="material_select" required>
+                  <option value="" disabled selected>Visit purpose</option>
+                  {% for purpose in purpose %}
+                  <option value="{{purpose.purpose}}"
+                     >{{purpose.purpose}}</option
+                     >
+                  {% endfor %}
+               </select>
+            </div>
+         </div>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">poll</i>
+               <select id="status" name="status" class="material_select" required>
+                  <option value="" disabled selected>Status of event</option>
+                  <option value="open" >Open</option>
+               </select>
+            </div>
+         </div>
+         <div class="row">
+            <div class="input-field col s12">
+               <button class="btn waves-effect waves-light" type="submit" id="submit_icon" required>Submit
+               <i class="material-icons right">send</i>
+               </button>
+            </div>
+         </div>
+      </div>
+   </form>
 </div>
 {% endblock %}

@@ -1,40 +1,31 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Appointments</h3>
-    <ul class="collapsible" data-collapsible="accordion">
-
-        {% for events in events %}
-        <li>
-            <div class="collapsible-header">
-                <div class="col s6">
-
-                <a href="{{url_for('edit_event', event_id=events._id)}}"> <i class="material-icons right" id="edit_icon">edit</i></a>
-
-                <a href="{{url_for('delete_event', event_id=events._id)}}"> <i class="material-icons right" id="delete_icon">delete</i></a>
-
-                <i class="material-icons roate left" id="expand_icon">expand_more</i><div id="label"><strong>{{events.date}} - {{events.visit_time}} - Vet: {{events.pvp_name}} - Client: {{events.client_name}}</strong></div>
-               
-            </div>
+<ul class="collapsible" data-collapsible="accordion">
+   {% for events in events %}
+   <li>
+      <div class="collapsible-header">
+         <div class="col s6">
+            <a href="{{url_for('edit_event', event_id=events._id)}}"> <i class="material-icons right" id="edit_icon">edit</i></a>
+            <a href="{{url_for('delete_event', event_id=events._id)}}"> <i class="material-icons right" id="delete_icon">delete</i></a>
+            <i class="material-icons roate left" id="expand_icon">expand_more</i>
+            <div id="label"><strong>{{events.date}} - {{events.visit_time}} - Vet: {{events.pvp_name}} - Client: {{events.client_name}}</strong></div>
+         </div>
+      </div>
+      <div class="collapsible-body" id="all_events">
+         <span class="title"><strong>Name:</strong></span> {{events.client_name}}
+         <p><span class="title"><strong>Farm Location:</strong></span> {{events.location}}</p>
+         <br>
+         <p><span class="title"><strong>Visit Date:</strong></span> {{events.date}}</p>
+         <p><span class="title"><strong>Visit Time:</strong></span> {{events.visit_time}}</p>
+         <p><span class="title"><strong>PVP:</strong></span> {{events.pvp_name}}</p>
+         <p><span class="title"><strong>Purpose:</strong></span> {{events.purpose}}</p>
+         <p><span class="title"><strong>Status:</strong></span> {{events.status}}</p>
+      </div>
+   </li>
+   {% endfor %}
+</ul>
+<!--create event link-->     
+<div class="add_new">  
+   <a href="{{url_for('add_event')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons">add</i></a>
 </div>
-            <div class="collapsible-body" id="all_events">
-
-                    <span class="title"><strong>Name:</strong></span> {{events.client_name}}
-                    <p><span class="title"><strong>Farm Location:</strong></span> {{events.location}}</p>
-                    <br>
-                    <p><span class="title"><strong>Visit Date:</strong></span> {{events.date}}</p>
-                    <p><span class="title"><strong>Visit Time:</strong></span> {{events.visit_time}}</p>
-                    <p><span class="title"><strong>PVP:</strong></span> {{events.pvp_name}}</p>
-                    
-                    <p><span class="title"><strong>Purpose:</strong></span> {{events.purpose}}</p>
-                    <p><span class="title"><strong>Status:</strong></span> {{events.status}}</p>
-            </div>
-    
-        </li>
-        {% endfor %}
-    </ul>
-  
- <!--create event link-->     
-   <div class="add_new">  
-<a href="{{url_for('add_event')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons">add</i></a>
-</div> 
 {% endblock %}
- 

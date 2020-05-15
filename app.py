@@ -145,7 +145,6 @@ def update_user(user_id):
         'pvp_name': request.form.get('pvp_name'),
         'reg_no': request.form.get('reg_no'),
         'email': request.form.get('email'),
-        'company_name': request.form.get('company_name'),
     })
     return redirect(url_for('users'))
 

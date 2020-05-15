@@ -1,132 +1,131 @@
 .container {
-  overflow:   scroll;
+	overflow: scroll;
 }
+
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-} 
+	width: 0px;
+	background: transparent;
+}
+
 
 /*--Navigation--*/
+
 nav .brand-logo {
-    margin-left: 15px;
+	margin-left: 15px;
 }
 
 .nav-wrapper {
-    background-color: #26a69a;
+	background-color: #26a69a;
 }
+
 
 /*--Footer--*/
 
 .footer {
-   background-color: #26a69a;
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   text-align: center;
-   color: white;
+	background-color: #26a69a;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	color: white;
 }
 
+
 /*--According icons--*/
+
 .collapsible-header {
-    position: relative;
+	position: relative;
 }
 
 #edit_icon {
-    position: absolute;
-    right: 50px;
+	position: absolute;
+	right: 50px;
 }
 
 #delete_icon {
-    position: absolute;
-    right: 0;
+	position: absolute;
+	right: 0;
 }
 
 a {
-    color: #26a69a;
+	color: #26a69a;
 }
 
 #add_icon {
-    color: #26a69a;
-    position: absolute;
-    bottom: 75px;
-    right: 40px;
+	color: #26a69a;
+	position: absolute;
+	bottom: 75px;
+	right: 40px;
 }
 
 #submit_icon {
-    z-index: 0;
+	z-index: 0;
 }
 
 
 /*--According details--*/
 
 #all_events {
-  column-count: 3;
+	column-count: 3;
 }
 
 .title {
-color: #26a69a;
+	color: #26a69a;
 }
 
 #label {
-    white-space: nowrap;
-    text-overflow: ellipsis;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .container .row {
-    margin-left: 1px;
+	margin-left: 1px;
 }
 
 
 /*--Media Queries--*/
+
 @media only screen and (max-width: 667px) {
-#all_events {
-  column-count: 1;
-}
-nav .brand-logo {
-    font-size: 19px;
-    left: 40%
-}
-
-h3 {
-  font-size: 20px;  
-}
-
-#label {
-    max-width: 180px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.footer {
-   color: #26a69a;
-
-}
+	#all_events {
+		column-count: 1;
+	}
+	nav .brand-logo {
+		font-size: 19px;
+		left: 40%
+	}
+	h3 {
+		font-size: 20px;
+	}
+	#label {
+		max-width: 180px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.footer {
+		color: #26a69a;
+	}
 }
 
 @media only screen and (max-width: 568px) {
-nav .brand-logo {
-    font-size: 15px;
-    left: 40%
-
-}
-.footer {
-   color: #26a69a;
-
-}
-
-h3 {
-  font-size: 15px;  
-}
-
-#all_events {
-  column-count: 1;
-}
+	nav .brand-logo {
+		font-size: 15px;
+		left: 40%
+	}
+	.footer {
+		color: #26a69a;
+	}
+	h3 {
+		font-size: 15px;
+	}
+	#all_events {
+		column-count: 1;
+	}
 }
 
 @media only screen and (max-width: 1024px) {
-#all_events {
-  column-count: 1;
-}
+	#all_events {
+		column-count: 1;
+	}
 }

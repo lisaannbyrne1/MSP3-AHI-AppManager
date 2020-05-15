@@ -1,54 +1,46 @@
 {% extends 'base.html'%} {% block content %}
-
 <h3>Edit Client Account</h3>
 <div class="row">
-    <form action="{{url_for('update_client', client_id=client._id)}}" method="POST"  class="col s12">
-        <div class="row">
-            <div class="row">
-                <div class="input-field col s12">
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="client_name" name="client_name" type="text" required class="validate" value="{{client.client_name}}">
-          <label for="icon_prefix">Client Name</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">code</i>
-          <input id="client_ref" name="client_ref" type="text" class="validate" required maxlength="7" value="{{client.client_ref}}">
-          <label for="icon_code">Client Ref</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">location_on</i>
-          <input id="address" name="address" type="text" class="validate" required value="{{client.address}}">
-          <label for="icon_location_on">Address</label>
-        </div>
-      </div>
-
-    <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">email</i>
-          <input id="email" name="email" type="text" class="validate" required value="{{client.email}}">
-          <label for="icon_location_on">Email</label>
-        </div>
-      </div>
-  
-
-      <div class="row">
-        <div class="input-field col s12">
-         <button class="btn waves-effect waves-light" type="submit" id="submit_icon" required>Submit
-        <i class="material-icons right">send</i>
-        </button>
+<form action="{{url_for('update_client', client_id=client._id)}}" method="POST"  class="col s12">
+   <div class="row">
+   <div class="row">
+      <div class="input-field col s12">
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">account_circle</i>
+               <input id="client_name" name="client_name" type="text" required class="validate" value="{{client.client_name}}">
+               <label for="icon_prefix">Client Name</label>
+            </div>
          </div>
-    </div>
-</div>
-
-    </form>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">code</i>
+               <input id="client_ref" name="client_ref" type="text" class="validate" required maxlength="7" value="{{client.client_ref}}">
+               <label for="icon_code">Client Ref</label>
+            </div>
+         </div>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">location_on</i>
+               <input id="address" name="address" type="text" class="validate" required value="{{client.address}}">
+               <label for="icon_location_on">Address</label>
+            </div>
+         </div>
+         <div class="row">
+            <div class="input-field col s12">
+               <i class="material-icons prefix">email</i>
+               <input id="email" name="email" type="text" class="validate" required value="{{client.email}}">
+               <label for="icon_location_on">Email</label>
+            </div>
+         </div>
+         <div class="row">
+            <div class="input-field col s12">
+               <button class="btn waves-effect waves-light" type="submit" id="submit_icon" required>Submit
+               <i class="material-icons right">send</i>
+               </button>
+            </div>
+         </div>
+      </div>
+</form>
 </div>
 {% endblock %}

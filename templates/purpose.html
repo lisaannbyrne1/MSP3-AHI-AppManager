@@ -1,29 +1,23 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Appointment Purpose</h3>
-    <ul class="collapsible" data-collapsible="accordion">
-        {% for purpose in purpose %}
-        <li>
-            <div class="collapsible-header">
-                <div class="col s6">
-
-                <a href="{{url_for('edit_purpose', purpose_id=purpose._id)}}"> <i class="material-icons right" id="edit_icon">edit</i></a>
-
-                <a href="{{url_for('delete_purpose', purpose_id=purpose._id)}}"> <i class="material-icons right" id="delete_icon">delete</i></a>
-
-                <div id="label"><i class="material-icons roate left" id="expand_icon">expand_more</i><strong>{{purpose.purpose}}</strong></div>
-
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <p><span class="title"><strong>Description:</strong></span>{{purpose.description}}</p>
-            </div>
-        </li>
-        {% endfor %}
-       </ul>
-
+<ul class="collapsible" data-collapsible="accordion">
+   {% for purpose in purpose %}
+   <li>
+      <div class="collapsible-header">
+         <div class="col s6">
+            <a href="{{url_for('edit_purpose', purpose_id=purpose._id)}}"> <i class="material-icons right" id="edit_icon">edit</i></a>
+            <a href="{{url_for('delete_purpose', purpose_id=purpose._id)}}"> <i class="material-icons right" id="delete_icon">delete</i></a>
+            <div id="label"><i class="material-icons roate left" id="expand_icon">expand_more</i><strong>{{purpose.purpose}}</strong></div>
+         </div>
+      </div>
+      <div class="collapsible-body">
+         <p><span class="title"><strong>Description:</strong></span> {{purpose.description}}</p>
+      </div>
+   </li>
+   {% endfor %}
+</ul>
 <!--create purpose link-->  
-
 <div class="add_new">
-<a href="{{url_for('add_purpose')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons">add</i></a>
-</div> 
+   <a href="{{url_for('add_purpose')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons">add</i></a>
+</div>
 {% endblock %}
