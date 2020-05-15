@@ -3,7 +3,7 @@
 ## Stream Three Project: Data Centric Development Milestone Project
 
 ### Demo
-A live demo can be found <a href="https://github.com/lisaannbyrne1/MSP3-AHI-TaskManager/blob/master/static/demo/demo.gif">here</a>
+A live demo can be found <a href="https://ahi-task-manager.herokuapp.com/">here</a>
 
 ![Demo](https://github.com/lisaannbyrne1/MSP3-AHI-TaskManager/blob/master/static/demo/demo.gif "=Demo")
 
@@ -42,16 +42,16 @@ The main features of this page are that it follows the users to interact with th
 In the future, I would like to include a log in page for clients to view and reschedule their appointments directly through the app. 
 
 #### Testing
-
+The app was tested against the criteria set out in the user stories and the criteria was met in each case. Then went on to test the app against CRUD functionality across all pages on the app. Across the app the user can view records, add records, edit records and delete records. During testing a bug in the code was found when trying to create a new appointment purpose, on review of this code I noticed there was a typo in the redirect on submit page.  The app was testing across several browsers including, Chrome, Firefox, Safari and Edge. Finally, I tested the app for mobile compatibility. During testing I found media queries were essential for the app to display and function correctly on mobile device of all sizes. It works best to display expanded data in 2 columns on desktop and 1 on mobile. 
 
 #### Deployment
-This app is deployed through Heroku and was deployed through the master branch. 
+This app is manually deployed through Heroku and was deployed through the master branch. I choose manually deployed to allow me to commit and test changes before deployed to the real site.
 
 ### Credits
 
 
 #### Content 
-The data contents of this app and database is fictional for example purposes. 
+The data contents of this app and database is fictional for example purposes.
 
 #### Media
 This app does not require any images. 
