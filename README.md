@@ -5,7 +5,7 @@
 ### Demo
 A live demo can be found <a href="https://github.com/lisaannbyrne1/MSP3-AHI-TaskManager/blob/master/static/demo/demo.gif">here</a>
 
-![Demo](https://github.com/lisaannbyrne1/MSP3-AHI-TaskManager/blob/master/static/demo/demo.gif"=Demo")
+![Demo](https://github.com/lisaannbyrne1/MSP3-AHI-TaskManager/blob/master/static/demo/demo.gif "=Demo")
 
 ### UX
 
