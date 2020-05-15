@@ -43,8 +43,9 @@ In the future, I would like to include a log in page for clients to view and res
 
 #### Testing
 
-#### Deployment
 
+#### Deployment
+This app is deployed through Heroku and was deployed through the master branch. 
 
 ### Credits
 
