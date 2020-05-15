@@ -10,7 +10,7 @@
 
                 <a href="{{url_for('delete_user', user_id=users._id)}}"> <i class="material-icons right" id="delete_icon">delete</i></a>
 
-                <i class="material-icons roate left" id="expand_icon">expand_more</i><strong>{{users.pvp_name}} - {{users.reg_no}}</strong>    
+                <div id="label"><i class="material-icons roate left" id="expand_icon">expand_more</i><strong>{{users.pvp_name}} - {{users.reg_no}}</strong></div>    
 
 
                 </div>
@@ -25,7 +25,9 @@
         {% endfor %}
         
     </ul>
-    <div>
+    
+    <!--create user-->  
+    <div class="add_new">
     <a href="{{url_for('add_user')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons"> add</i></a>
 </div>
 {% endblock %}

@@ -10,12 +10,12 @@
 
                 <a href="{{url_for('delete_purpose', purpose_id=purpose._id)}}"> <i class="material-icons right" id="delete_icon">delete</i></a>
 
-                <i class="material-icons roate left" id="expand_icon">expand_more</i><strong>{{purpose.purpose}}</strong>
+                <div id="label"><i class="material-icons roate left" id="expand_icon">expand_more</i><strong>{{purpose.purpose}}</strong></div>
 
                 </div>
             </div>
             <div class="collapsible-body">
-                <p><span class="title"><strong>Description:</strong></span> {{purpose.description}}</p>
+                <p><span class="title"><strong>Description:</strong></span>{{purpose.description}}</p>
             </div>
         </li>
         {% endfor %}
@@ -23,7 +23,7 @@
 
 <!--create purpose link-->  
 
-<div>  
+<div class="add_new">
 <a href="{{url_for('add_purpose')}}" class="btn-floating btn-large waves-effect waves-light material-icons right" id="add_icon"> <i class="material-icons">add</i></a>
 </div> 
 {% endblock %}

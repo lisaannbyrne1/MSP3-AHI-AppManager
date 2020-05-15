@@ -40,15 +40,43 @@ a {
 }
 
 #add_icon {
- 
     color: #26a69a;
+    position: absolute;
+    bottom: 75px;
+    right: 40px;
 }
 
+
 /*--According details--*/
+
 #all_events {
   column-count: 3;
 }
 
 .title {
 color: #26a69a;
+}
+
+
+/*--Media Queries--*/
+@media only screen and (max-width: 667px) {
+#all_events {
+  column-count: 1;
+}
+nav .brand-logo {
+    font-size: 20px;
+    left: 40%
+}
+
+h3 {
+  font-size: 20px;  
+}
+
+#label {
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 }
