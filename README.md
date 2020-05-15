@@ -3,9 +3,9 @@
 ## Stream Three Project: Data Centric Development Milestone Project
 
 ### Demo
-A live demo can be found <a href="https://github.com/lisaannbyrne1/MSP3-AHI-TaskManager/blob/master/static/demo/demo.gif">click here</a>
+A live demo can be found <a href="https://github.com/lisaannbyrne1/MSP3-AHI-TaskManager/blob/master/static/demo/demo.gif">here</a>
 
-![demo]("=Demo")
+![Demo](https://github.com/lisaannbyrne1/MSP3-AHI-TaskManager/blob/master/static/demo/demo.gif"=Demo")
 
 ### UX
 
