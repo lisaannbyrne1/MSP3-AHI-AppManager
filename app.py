@@ -81,7 +81,7 @@ def add_purpose():
 def insert_purpose():
     purpose = mongo.db.purpose
     purpose.insert_one(request.form.to_dict())
-    return redirect(url_for('get_purpose'))
+    return redirect(url_for('purpose'))
 
 
 @app.route('/delete_purpose/<purpose_id>')
